@@ -38,8 +38,9 @@ export default class Application extends EventEmitter {
 
     b.on('listen', () => {
 
+      console.log('music')
 
-        this.emit('listen', Beat.events.BIT);
+        // this.emit(Beat.events.BIT);
       
 
     })

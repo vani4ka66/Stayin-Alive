@@ -18,19 +18,20 @@ export default class Beat extends EventEmitter {
     setInterval(() => {
       console.log("bit");
 
-      if(num == 6){
+      if (num == 6) {
         num = 0;
       }
 
+      let a = document.createElement('div');
+      a.classList.add('message');
+      let main = document.getElementsByClassName('main')[0];
+
       for (let i = 0; i < 1; i++) {
-      
+
         const element = lyrics[num];
 
-        let a = document.createElement('div');
-        a.classList.add('message');
-        let main = document.getElementsByClassName('main')[0];
         main.appendChild(a);
-       
+
         a.innerHTML = element;
 
         this.emit(Beat.events.BIT);
@@ -40,7 +41,8 @@ export default class Beat extends EventEmitter {
         num = num + 1;
       }
 
-    }, 1600);
+
+    }, 600);
 
 
   }
