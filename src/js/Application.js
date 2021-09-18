@@ -34,22 +34,13 @@ export default class Application extends EventEmitter {
 
     let b = new Beat();
 
+  
+
     b.on('listen', () => {
-      // console.log('music')
 
-      for (let i = 0; i < lyrics.length; i++) {
-        const element = lyrics[i];
-
-        let a = document.createElement('div');
-        a.classList.add('message');
-        let main = document.getElementsByClassName('main')[0];
-        main.appendChild(a)
-       
-        a.innerHTML = lyrics[i]
 
         this.emit('listen', Beat.events.BIT);
-        
-      }
+      
 
     })
 
