@@ -31,16 +31,10 @@ export default class Application extends EventEmitter {
 
     const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
 
-
     let b = new Beat();
+    
 
-  
-
-    b.on('listen', () => {
-
-      console.log('music')
-
-    })
+    b.on('listen', () => { console.log('music') })
 
   }
 }
