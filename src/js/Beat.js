@@ -24,13 +24,12 @@ export default class Beat extends EventEmitter {
 
       let a = document.createElement('div');
       a.classList.add('message');
-      let main = document.getElementsByClassName('main')[0];
 
       for (let i = 0; i < 1; i++) {
 
         const element = lyrics[num];
 
-        main.appendChild(a);
+        document.querySelector(".main").appendChild(a);
 
         a.innerHTML = element;
 

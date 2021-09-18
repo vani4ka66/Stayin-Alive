@@ -40,9 +40,6 @@ export default class Application extends EventEmitter {
 
       console.log('music')
 
-        // this.emit(Beat.events.BIT);
-      
-
     })
 
   }
