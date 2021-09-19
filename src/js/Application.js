@@ -34,13 +34,7 @@ export default class Application extends EventEmitter {
 
     let b = new Beat();
 
-    // let num = 0;
-
-
     b.on('listen', () => {
-      console.log('music')
-
-      // let num = 0;
 
       if (this.num == 6) {
         this.num = 0;
@@ -63,13 +57,6 @@ export default class Application extends EventEmitter {
 
         this.num = this.num + 1;
       }
-
-
-
-
-
-
-
 
     })
 
