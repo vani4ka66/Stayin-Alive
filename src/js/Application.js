@@ -51,11 +51,7 @@ export default class Application extends EventEmitter {
 
         a.innerHTML = element;
 
-        this.emit(Beat.events.BIT);
-
-        this.emit('listen', Beat.events.BIT);
-
-        this.num = this.num + 1;
+        this.num++;
       }
 
     })
