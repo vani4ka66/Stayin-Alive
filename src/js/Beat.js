@@ -1,5 +1,4 @@
 import EventEmitter from "eventemitter3";
-import Application from "./Application";
 
 export default class Beat extends EventEmitter {
   static get events() {
