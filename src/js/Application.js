@@ -32,11 +32,11 @@ export default class Application extends EventEmitter {
 
     const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
 
-    let b = new Beat();
+    // let b = new Beat();
 
     
 
-    b.addListener('listen', () => {
+    this._beat.addListener('listen', () => {
 
       if (this.num == 6) {
         this.num = 0;
