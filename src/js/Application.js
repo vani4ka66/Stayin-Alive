@@ -13,12 +13,11 @@ export default class Application extends EventEmitter {
 
     const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
     let count = 0;
-    this.num = 0;
     
     this._beat = new Beat().addListener('listen', () => {
 
-      if (this.num == 6) {
-        this.num = 0;
+      if (count == 6) {
+        count = 0;
       }
 
       let a = document.createElement('div');
@@ -26,13 +25,10 @@ export default class Application extends EventEmitter {
 
       for (let i = 0; i < 1; i++) {
 
-        const element = lyrics[this.num];
-
+        const element = lyrics[count];
         document.querySelector(".main").appendChild(a);
-
         a.innerHTML = element;
-
-        this.num++;
+        count++;
       }
 
     })
@@ -51,8 +47,8 @@ export default class Application extends EventEmitter {
 
     // this._beat.on('listen', () => {
 
-    //   if (this.num == 6) {
-    //     this.num = 0;
+    //   if (count == 6) {
+    //     count = 0;
     //   }
 
     //   let a = document.createElement('div');
@@ -60,15 +56,15 @@ export default class Application extends EventEmitter {
 
     //   for (let i = 0; i < 1; i++) {
 
-    //     const element = lyrics[this.num];
+    //     const element = lyrics[count];
 
-    //     console.log(this.num)
+    //     console.log(count)
 
     //     document.querySelector(".main").appendChild(a);
 
     //     a.innerHTML = element;
 
-    //     this.num++;
+    //     count++;
     //   }
 
     // })
