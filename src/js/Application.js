@@ -34,7 +34,9 @@ export default class Application extends EventEmitter {
 
     let b = new Beat();
 
-    b.on('listen', () => {
+    
+
+    b.addListener('listen', () => {
 
       if (this.num == 6) {
         this.num = 0;
