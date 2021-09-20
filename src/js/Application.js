@@ -19,19 +19,7 @@ export default class Application extends EventEmitter {
 
     this._create()
 
-    this._beat.addListener('listen', this._create)
-
-    this.emit(Application.events.READY);
-  }
-
-  _create() {
-
-    const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
-
-    // console.log('music')
-
-
-    this._beat.on('listen', () => {
+    this._beat.addListener('listen', () => {
 
       if (this.num == 6) {
         this.num = 0;
@@ -44,8 +32,6 @@ export default class Application extends EventEmitter {
 
         const element = lyrics[this.num];
 
-        console.log(this.num)
-
         document.querySelector(".main").appendChild(a);
 
         a.innerHTML = element;
@@ -54,6 +40,40 @@ export default class Application extends EventEmitter {
       }
 
     })
+
+    this.emit(Application.events.READY);
+  }
+
+  _create() {
+
+    let a = document.createElement('div');
+    a.classList.add('message');
+
+    // const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
+
+    // this._beat.on('listen', () => {
+
+    //   if (this.num == 6) {
+    //     this.num = 0;
+    //   }
+
+    //   let a = document.createElement('div');
+    //   a.classList.add('message');
+
+    //   for (let i = 0; i < 1; i++) {
+
+    //     const element = lyrics[this.num];
+
+    //     console.log(this.num)
+
+    //     document.querySelector(".main").appendChild(a);
+
+    //     a.innerHTML = element;
+
+    //     this.num++;
+    //   }
+
+    // })
 
   }
 }
