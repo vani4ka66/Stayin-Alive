@@ -11,10 +11,22 @@ export default class Application extends EventEmitter {
   constructor() {
     super();
 
-    const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
-    let count = 0;
+    // const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
     
-    this._beat = new Beat().on('listen', () => {
+    this._beat = new Beat('listener', Beat.events.BIT);
+
+    this._create()
+
+    this.emit(Application.events.READY);
+  }
+
+  _create() {
+
+    let count = 0;
+
+    const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
+
+    this._beat.on('listen', () => {
 
       if (count == 6) {
         count = 0;
@@ -26,48 +38,15 @@ export default class Application extends EventEmitter {
       for (let i = 0; i < 1; i++) {
 
         const element = lyrics[count];
+
         document.querySelector(".main").appendChild(a);
+
         a.innerHTML = element;
+
         count++;
       }
 
     })
-
-    this._create()
-
-    this.emit(Application.events.READY);
-  }
-
-  _create() {
-
-    let a = document.createElement('div');
-    a.classList.add('message');
-
-    // const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
-
-    // this._beat.on('listen', () => {
-
-    //   if (count == 6) {
-    //     count = 0;
-    //   }
-
-    //   let a = document.createElement('div');
-    //   a.classList.add('message');
-
-    //   for (let i = 0; i < 1; i++) {
-
-    //     const element = lyrics[count];
-
-    //     console.log(count)
-
-    //     document.querySelector(".main").appendChild(a);
-
-    //     a.innerHTML = element;
-
-    //     count++;
-    //   }
-
-    // })
 
   }
 }
