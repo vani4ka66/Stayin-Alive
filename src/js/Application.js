@@ -18,7 +18,7 @@ export default class Application extends EventEmitter {
 
     this._beat.on('listen', function (data) {
 
-      console.log('dkfdkf')
+      this.emit(Beat.events.BIT);
 
       if (count == 6) {
         count = 0;
@@ -37,11 +37,8 @@ export default class Application extends EventEmitter {
   
         count++;
       }
-
-      this.emit(Beat.events.BIT);
   
     })
-
 
     this._create()
 
@@ -49,33 +46,6 @@ export default class Application extends EventEmitter {
   }
 
   _create() {
-
-    let count = 0;
-
-    const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
-
-    // this._beat.on('listen', () => {
-
-    // if (count == 6) {
-    //   count = 0;
-    // }
-
-    // let a = document.createElement('div');
-    // a.classList.add('message');
-
-    // for (let i = 0; i < 1; i++) {
-
-    //   const element = lyrics[count];
-
-    //   document.querySelector(".main").appendChild(a);
-
-    //   a.innerHTML = element;
-
-    //   count++;
-    // }
-
-
-    // })
 
   }
 }
