@@ -14,7 +14,12 @@ export default class Application extends EventEmitter {
     const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
     // let count = 0;
     
-    this._beat = new Beat('listen', Beat.events.BIT)
+    this._beat = new Beat();
+
+    this._beat.on('listen', function(data){
+      console.log(data)
+    })
+
 
     this._create()
 
@@ -40,14 +45,13 @@ export default class Application extends EventEmitter {
 
         const element = lyrics[count];
 
-        console.log(count)
-
         document.querySelector(".main").appendChild(a);
 
         a.innerHTML = element;
 
         count++;
       }
+
 
     })
 
