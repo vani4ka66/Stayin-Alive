@@ -13,7 +13,12 @@ export default class Application extends EventEmitter {
 
     // const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
     
-    this._beat = new Beat('listener', Beat.events.BIT);
+    this._beat = new Beat('listen', Beat.events.BIT);
+    // this._beat = new Beat();
+
+    // this._beat.addListener('listen',Beat.events.BIT);
+    // this._beat.on('listen', Beat.events.BIT);
+
 
     this._create()
 
